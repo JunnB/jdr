@@ -27,7 +27,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        <p className="App-intro">Bienvenue dans mon JDR</p>
+        <p className="App-intro">Bienvenue dans ce JDR</p>
         {this.goToForm()}
         {this.goToGame()}
       </div>

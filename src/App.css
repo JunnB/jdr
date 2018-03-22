@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 3.5em;
+  margin-right: .75em;
+}
+
+.App-header {
+  background-color: #222;
+  padding: .5em 2em;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.App-form {
+  padding:20px;
+}
+
+.App-form.Input {
+  padding:20px;
+}
+
+input {
+  padding: 1em 1.5em;
+  border: none;
+  box-shadow: inset 0 0 1px black;
+  border: 2px;
+  font-size: 1em;
+}
+
+.App-form-group input {
+  border-radius: 2px 0 0 2px;
+  margin-left: 1em;
+}
+
+.App-form-group .App-btn {
+  border-radius: 0 2px 2px 0;
+}
+
+.App-btn {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  border-radius: 2px;
+  background: #f67c46;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.App-btn:active {
+  background: #d06739
+}
+
+.App-btn:hover {
+  background: #e86931
+}
+
+.App-brand {
+  display: flex;
+  align-items: center;
+}
+
+.App-btn-small {
+  margin: .5em;
+  padding: .6em .75em;
+}
+
+.App-btn-modal {
+  margin: .5em;
+  padding: .6em .75em;
+  background: #222;
+  color: white;
+}
+
+.App-btn-yellow {
+  margin: .5em;
+  background: #f3bb39;
+}
+
+.App-btn-yellow:hover {
+  background: #de9c03;
+}
+
+.App-game {
+  text-align: center;
+}
+
+.App-game p {
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.App-choices .App-btn-yellow {
+  display: inline-flex;
+  align-items: center;
+}

@@ -1,9 +1,8 @@
 let backendHost;
-
 const hostname = window && window.location && window.location.hostname;
 
 if(hostname === 'stormy-cliffs-74179.herokuapp.com') {
-  backendHost = 'http://stormy-cliffs-74179.herokuapp.com';
+  backendHost = 'https://stormy-cliffs-74179.herokuapp.com';
 } else if('localhost') {
   backendHost = 'http://localhost:5000';
 } else {

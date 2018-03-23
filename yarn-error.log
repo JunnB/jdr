@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.8.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "jdr",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "axios": "^0.18.0",
+      "body-parser": "^1.18.2",
+      "express": "^4.16.3",
+      "foreman": "^2.0.0",
+      "marked": "^0.3.18",
+      "mongoose": "^5.0.11",
+      "nodemon": "^1.17.2",
+      "pg": "6.x",
+      "react": "^16.2.0",
+      "react-dom": "^16.2.0",
+      "react-router": "^4.2.0",
+      "react-router-dom": "^4.2.2",
+      "react-scripts": "1.1.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+      "concurrently": "^3.5.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Users/juniorbernard/Documents/GitHub/jdr/node_modules/buffer-writer/package.json'

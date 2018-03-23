@@ -36,8 +36,8 @@
     "island" : {
       "text": "Après quelques jours de voyage, vous débarquez sur une île tropicale. Au loin à votre droite, vous voyez une étrange lueur dans les collines. A votre gauche, un sentier disparaît dans une jungle ténébreuse. Quel chemin choisissez-vous ?",
       "next": [
-        {"id": "island-right", "text": "A droite"},
-        {"id": "island-left", "text": "A gauche"}
+        {"id": "island-left", "text": "A gauche"},
+        {"id": "island-right", "text": "A droite"}
       ]
     },
 
@@ -65,8 +65,8 @@
     "cavern" : {
       "text": "Vous entrez dans une caverne sombre aux paroies recouvertes de toiles d'araignées. A votre droite, une étrange lumière attire votre regard. Sur la gauche, un bruit strident se fait entendre. Où allez-vous ?",
       "next": [
-        {"id": "cavern-right", "text": "Prendre à droite"},
-        {"id": "cavern-left", "text": "Prendre à gauche"}
+        {"id": "cavern-left", "text": "Prendre à gauche"},
+        {"id": "cavern-right", "text": "Prendre à droite"}
       ]
     },
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const pg = require('pg');
 const app = express();
-const port = process.env.API_PORT || 5000;
+const port = process.env.PORT || 8080;
 
 //To prevent errors from Cross Origin Resource Sharing, we will set
 //our headers to allow CORS with middleware like so:

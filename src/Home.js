@@ -15,6 +15,8 @@ class Home extends Component {
 
   callApi = async () => {
     const response = await fetch(`${API_ROOT}/api/hello`);
+    console.log(response);
+    console.log(`${API_ROOT}/api/hello`);
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);

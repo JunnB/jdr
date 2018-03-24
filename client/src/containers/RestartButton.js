@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {deleteCharacter} from '../services/Services.js';
-import ConfirmModal from '../layouts/ConfirmModal'
+import ConfirmModal from '../components/ConfirmModal'
 import { restartCharacter } from '../actions/actions';
 import '../App.css';
 

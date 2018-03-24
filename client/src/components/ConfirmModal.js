@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  Modal,
-  Button
-} from 'react-bootstrap';
-import LinkButton from './LinkButton';
-import {toogleModal} from '../actions/actions'
+import { Modal, Button } from 'react-bootstrap';
+import LinkButton from '../layouts/LinkButton';
+import { toogleModal } from '../actions/actions';
 
 class ConfirmModal extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-  }
 
-  handleClose() {
+  handleClose = () => {
     var modal = Object.assign({}, this.props.modal);
     modal.show = false;
     this.props.dispatch(toogleModal(modal));
-  }
+  };
 
-  handleShow() {
+  handleShow = () => {
     var modal = Object.assign({}, this.props.modal);
     modal.show = true;
     this.props.dispatch(toogleModal(modal));
-  }
+  };
 
-  handleSave() {
+  handleSave = () => {
     this.handleClose();
     this.props.onValidation();
-  }
+  };
 
   render() {
     return (
@@ -58,7 +50,6 @@ class ConfirmModal extends Component {
     );
   }
 }
-
 
 function mapStateToProps(state) {
   return {

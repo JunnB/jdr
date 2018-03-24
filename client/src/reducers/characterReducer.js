@@ -17,7 +17,6 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CHARACTER_UPDATED:
       updated['character'] = action.character;
-      // console.log(updated)
       return updated;
     case actionTypes.CHARACTER_RESTARTED:
         return initialState;

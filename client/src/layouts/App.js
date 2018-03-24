@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import store from '../store/store';
 import Home from '../components/Home';
 import Header from '../layouts/Header';
-import Game from './Game';
+import Game from '../containers/Game';
 import Layout from '../layouts/Layout'
-import Character from './Character';
+import Character from '../containers/Character';
 
 //   callApi(`/api/hello`)
 //     .then(res => this.setState({ response: res.express }))

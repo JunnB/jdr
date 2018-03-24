@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import LinkButton from '../layouts/LinkButton';
 
 class Home extends Component {
   // Propose au joueur de créer un personnage
   goToForm() {
     if (!this.props.character.characterCreated) {
       return (
-        <Link className="App-btn" to={'/character'}>
-          Créer un personnage
-        </Link>
+        <LinkButton
+          to={'/character'}
+          label='Créer un personnage'
+          className="App-btn"
+        />
       );
     }
   }
@@ -18,9 +20,11 @@ class Home extends Component {
   goToGame() {
     if (this.props.character.characterCreated) {
       return (
-        <Link className="App-btn" to={'/game'}>
-          Continuer la partie
-        </Link>
+        <LinkButton
+          to={'/game'}
+          label='Continuer la partie'
+          className="App-btn"
+        />
       );
     }
   }

@@ -5,7 +5,6 @@ var initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log(state);
   var updated = Object.assign({}, state);
   switch (action.type) {
     case actionTypes.MODAL_TOOGLED:

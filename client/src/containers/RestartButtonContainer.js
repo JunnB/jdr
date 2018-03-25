@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import {deleteCharacter} from '../services/Services.js';
 import ConfirmModal from './ConfirmModalContainer'
 import { restartCharacter } from '../actions/characterActions';
+import { restartGame } from '../actions/gameActions';
 import '../App.css';
 
 function mapDispatchToProps(dispatch) {
@@ -9,6 +10,7 @@ function mapDispatchToProps(dispatch) {
     onValidation: () => {
       deleteCharacter();
       dispatch(restartCharacter());
+      dispatch(restartGame());
     },
   };
 }

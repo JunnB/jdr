@@ -11,13 +11,22 @@ class CharacterStatsCreation extends Component {
   render() {
     return (
       <div>
-        <p>Attribuer de nouvelles caractéristiques :</p>
+        <h4>Attribuer de nouvelles caractéristiques</h4>
         <button className="App-btn" onClick={event => this.onClick(event)}>
           Générer
         </button>
-        <p>Force : {this.props.character.strenght}</p>
-        <p>Santé : {this.props.character.health}</p>
-        <p>Chance : {this.props.character.luck}</p>
+        <p>
+          <b>Nom : {this.props.character.name}</b>
+        </p>
+        <p>
+          <b>Force : {this.props.character.strenght}</b>
+        </p>
+        <p>
+          <b>Santé : {this.props.character.health}</b>
+        </p>
+        <p>
+          <b>Chance : {this.props.character.luck}</b>
+        </p>
       </div>
     );
   }

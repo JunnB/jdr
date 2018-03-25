@@ -20,9 +20,9 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/:id', function(req, res, next){
-    const id = req.params.id;
-    StoryService.findById(id, function(err, result){
+router.get('/:name', function(req, res, next){
+    const name = req.params.name;
+    StoryService.findByName(name, function(err, result){
         if(err){
             console.log(err);
             res.status(500).json({

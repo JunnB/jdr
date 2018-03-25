@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
 import Stats from '../../containers/StatsContainer.js';
-const chapters = require('../../story.json').chapters;
+import RestartButton from '../../containers/RestartButtonContainer';
+import GenericBlock from '../../layouts/GenericBlock';
 
 class Game extends Component {
   // Chargement de la position
   componentDidMount() {
-    const position = localStorage.getItem('position');
-    if (position) {
-      this.props.updatePosition(position);
+    const title = localStorage.getItem('title');
+    if (title) {
+      this.props.fetchStory(title);
+    } else {
+      this.props.fetchStory(this.props.game.story.title);
     }
   }
 
   // Change la position du personnage
-  changePosition(id) {
-    this.props.updatePosition(id);
-    localStorage.setItem('position', id);
+  changePosition(title) {
+    this.props.fetchStory(title);
+    localStorage.setItem('title', title);
   }
 
-  // Propose le choix du prochain chapitre au joueur
-  hasChoice() {
+  displayRestartButton() {
+    return <RestartButton />;
+  }
+  displayChoices() {
     return (
       <div>
-        {chapters[this.props.game.position].next.map((choices, i) => {
+        {this.props.game.story.next.map((choices, i) => {
           return (
             <button
               className="App-btn App-btn-yellow"
@@ -35,15 +40,27 @@ class Game extends Component {
       </div>
     );
   }
+  // Propose le choix du prochain chapitre au joueur
+  hasChoice() {
+    if (this.props.game.story.next && this.props.game.story.next.length > 0) {
+      return this.displayChoices();
+    } else {
+      return this.displayRestartButton();
+    }
+  }
 
   render() {
     return (
-      <div>
-        <Stats/>
-        <div className="App-game">
-          <p>{chapters[this.props.game.position].text}</p>
-          <div className="App-choices">{this.hasChoice()}</div>
-        </div>
+      <div children={this}>
+        <GenericBlock children={this}>
+          <Stats />
+        </GenericBlock>
+        <GenericBlock children={this} allScreenHeight={true}>
+          <div className="App-game">
+            <p>{this.props.game.story.text}</p>
+            <div className="App-choices">{this.hasChoice()}</div>
+          </div>
+        </GenericBlock>
       </div>
     );
   }

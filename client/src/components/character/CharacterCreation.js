@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CharacterStatsCreation from './CharacterStatsCreation';
 import { Link } from 'react-router-dom';
 import { saveCharacter } from '../../services/Services.js';
+import GenericBlock from '../../layouts/GenericBlock';
 
 class CharacterCreation extends Component {
   // Affiche un message d'erreur s'il n'y a pas de nom renseigné
@@ -19,6 +20,17 @@ class CharacterCreation extends Component {
           createCharacter={character => this.props.createCharacter(character)}
           character={this.props.character}
         />
+      );
+    } else {
+      if (this.props.character.tmpName) {
+      } else {
+        return <h4>Pas de personnage :(</h4>;
+      }
+
+      return (
+        <h4>
+          Mon personnage sera <b>{this.props.character.tmpName}</b>
+        </h4>
       );
     }
   }
@@ -59,26 +71,32 @@ class CharacterCreation extends Component {
       <div className="App">
         <form className="App-form">
           <div className="App-form-group">
-            <label htmlFor="name">Nom du personnage :</label>
-            <input
-              htmlFor="name"
-              id="name"
-              type="text"
-              value={this.props.character.tmpName}
-              onChange={this.inputOnChange}
-              placeholder="John Doe"
-            />
-            <button
-              className="App-btn"
-              onClick={event => {
-                this.saveCharacterName(event);
-              }}
-            >
-              Nommer
-            </button>
-            {this.displayWarning()}
-            {this.displayCarac()}
-            {this.displayPlay()}
+            <GenericBlock children={this}>
+              {this.displayCarac()}
+            </GenericBlock>
+            <div className="allScreenHeight">
+              <label htmlFor="name">Nom du personnage :</label>
+              <input
+                htmlFor="name"
+                id="name"
+                type="text"
+                value={this.props.character.tmpName}
+                onChange={this.inputOnChange}
+                placeholder="John Doe"
+              />
+              <button
+                className="App-btn"
+                onClick={event => {
+                  this.saveCharacterName(event);
+                }}
+              >
+                Nommer
+              </button>
+              {this.displayWarning()}
+              <div>
+              {this.displayPlay()}
+              </div>
+            </div>
           </div>
         </form>
       </div>

@@ -53,11 +53,9 @@ export function deleteCharacter() {
 }
 
 export const callApi = async url => {
-  const response = await fetch(url);
-  console.log(response);
+  const response = await fetch(`http://localhost:5000${url}`);
   const body = await response.json();
-
   if (response.status !== 200) throw Error(body.message);
 
-  return body;
+  return body.data[0];
 };

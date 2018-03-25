@@ -22,7 +22,7 @@ class Header extends Component {
             <Link to={process.env.PUBLIC_URL + '/'}>
               <img src={logo} className="App-logo" alt="logo" />
             </Link>
-            <h2>Jeu de rôle</h2>
+            <h2>Jeu dont tu es le Héros</h2>
           </div>
           {this.displayRestartButton()}
         </div>

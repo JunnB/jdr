@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LinkButton from '../components/shared/LinkButton';
-
+import GenericBlock from './GenericBlock'
 class Home extends Component {
   // Propose au joueur de créer un personnage
   goToForm() {
@@ -8,7 +8,7 @@ class Home extends Component {
       return (
         <LinkButton
           to={'/character'}
-          label='Créer un personnage'
+          label="Créer un personnage"
           className="App-btn"
         />
       );
@@ -21,7 +21,7 @@ class Home extends Component {
       return (
         <LinkButton
           to={'/game'}
-          label='Continuer la partie'
+          label="Continuer la partie"
           className="App-btn"
         />
       );
@@ -30,11 +30,11 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="App">
-        <p className="App-intro">Bienvenue dans le JDR</p>
-        {this.goToForm()}
-        {this.goToGame()}
-      </div>
+      <GenericBlock allScreenHeight={'true'}>
+          <h4>Bienvenue dans ta plus grande Aventure</h4>
+          {this.goToForm()}
+          {this.goToGame()}
+      </GenericBlock>
     );
   }
 }

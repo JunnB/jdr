@@ -1,15 +1,21 @@
 import * as actionTypes from '../actions/ActionTypes';
 
 var initialState = {
-    position: 'start'
+  story: {
+    title: 'start',
+    text: '',
+    next: []
+  }
 };
 
 export default (state = initialState, action) => {
   var updated = Object.assign({}, state);
   switch (action.type) {
-    case actionTypes.POSITION_UPDATED:
-      updated['position'] = action.position;
+    case actionTypes.STORY_UPDATED:
+      updated['story'] = action.story;
       return updated;
+    case actionTypes.GAME_RESTARTED:
+      return initialState;
     default:
       return state;
   }

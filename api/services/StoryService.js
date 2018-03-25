@@ -10,8 +10,8 @@ module.exports = {
         })
     },
 
-    findById: function(id, callback){
-        News.findById(id, function(err, results){
+    findByName: function(name, callback){
+        Story.find({title: name}).exec(function(err, results){
             if(err){
                 callback(err, null);
                 return;

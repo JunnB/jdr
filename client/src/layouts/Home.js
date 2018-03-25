@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import LinkButton from '../layouts/LinkButton';
+import LinkButton from '../components/shared/LinkButton';
 
 class Home extends Component {
   // Propose au joueur de créer un personnage
@@ -40,9 +39,4 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    character: state.character.character
-  };
-}
-export default connect(mapStateToProps)(Home);
+export default Home;

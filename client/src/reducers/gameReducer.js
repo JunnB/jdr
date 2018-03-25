@@ -1,16 +1,14 @@
 import * as actionTypes from '../actions/ActionTypes';
 
 var initialState = {
-   show: false
+    position: 'start'
 };
 
 export default (state = initialState, action) => {
   var updated = Object.assign({}, state);
-  // console.log(updated['modal']['show']);
   switch (action.type) {
-    case actionTypes.MODAL_TOOGLED:
-      updated['show'] = action.show;
-      // console.log(updated['modal']['show']);
+    case actionTypes.POSITION_UPDATED:
+      updated['position'] = action.position;
       return updated;
     default:
       return state;

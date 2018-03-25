@@ -1,8 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateCharacter } from '../actions/actions';
+import { updateCharacter } from '../actions/characterActions';
 import { getCurrentCharacter } from '../services/Services.js';
-import store from '../store/store';
 class Layout extends Component {
   // Chargement du personnage
   componentDidMount() {

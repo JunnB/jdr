@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
-import Stats from '../components/Stats.js';
-
-const chapters = require('../story.json').chapters;
+import Stats from '../../containers/StatsContainer.js';
+const chapters = require('../../story.json').chapters;
 
 class Game extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      position: 'start'
-    };
-  }
-
   // Chargement de la position
   componentDidMount() {
     const position = localStorage.getItem('position');
     if (position) {
-      this.setState({ position });
+      this.props.updatePosition(position);
     }
   }
 
   // Change la position du personnage
   changePosition(id) {
-    this.setState({ position: id });
+    this.props.updatePosition(id);
     localStorage.setItem('position', id);
   }
 
@@ -29,7 +21,7 @@ class Game extends Component {
   hasChoice() {
     return (
       <div>
-        {chapters[this.state.position].next.map((choices, i) => {
+        {chapters[this.props.game.position].next.map((choices, i) => {
           return (
             <button
               className="App-btn App-btn-yellow"
@@ -43,18 +35,13 @@ class Game extends Component {
       </div>
     );
   }
+
   render() {
     return (
       <div>
-        <Stats
-          name={this.props.name}
-          strenght={this.props.strenght}
-          health={this.props.health}
-          luck={this.props.luck}
-        />
-
+        <Stats/>
         <div className="App-game">
-          <p>{chapters[this.state.position].text}</p>
+          <p>{chapters[this.props.game.position].text}</p>
           <div className="App-choices">{this.hasChoice()}</div>
         </div>
       </div>

@@ -1,9 +1,18 @@
-// index.js
 import * as actionTypes from './ActionTypes';
 
 function characterRestarted(){
     return {
         type: actionTypes.CHARACTER_RESTARTED
+    }
+}
+
+function characterNameSaved(tmpName){
+    return {
+        type: actionTypes.CHARACTER_NAME_SAVED,
+        character: {
+          submitted: true,
+          tmpName: tmpName
+      }
     }
 }
 
@@ -14,16 +23,9 @@ function characterUpdated(character){
     }
 }
 
-function modalToogled(modal){
-    return {
-        type: actionTypes.MODAL_TOOGLED,
-        modal: modal
-    }
-}
-
-export function toogleModal(modal){
+export function saveCharacterName(tmpName){
     return dispatch => {
-        dispatch(modalToogled(modal));
+        dispatch(characterNameSaved(tmpName));
     }
 }
 

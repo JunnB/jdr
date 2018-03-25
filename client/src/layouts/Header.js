@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import RestartButton from '../containers/RestartButton'
+import RestartButton from '../containers/RestartButtonContainer'
 import logo from '../logo.svg';
 import '../App.css';
 

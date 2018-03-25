@@ -3,7 +3,7 @@ let backendHost;
 const hostname = window && window.location && window.location.hostname;
 
 if(hostname === 'jdr-api.herokuapp.com') {
-  backendHost = 'http://jdr-api.herokuapp.com';
+  backendHost = 'https://jdr-api.herokuapp.com';
 } else if('localhost') {
   backendHost = 'http://localhost:5000';
 } else {

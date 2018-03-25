@@ -1,3 +1,4 @@
+import {API_ROOT} from '../config/api-config'
 // Renvoie un entier aléatoire
 // entre une valeur min (incluse)
 // et une valeur max (incluse)
@@ -53,7 +54,7 @@ export function deleteCharacter() {
 }
 
 export const callApi = async url => {
-  const response = await fetch(`http://localhost:5000${url}`);
+  const response = await fetch(`${API_ROOT}${url}`);
   const body = await response.json();
   if (response.status !== 200) throw Error(body.message);
 

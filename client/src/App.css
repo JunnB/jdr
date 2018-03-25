@@ -1,5 +1,5 @@
-#root{
-  background-color: #F6F6F6;
+#root {
+  background-color: #f6f6f6;
 }
 
 .App {
@@ -8,23 +8,23 @@
 
 .App-logo {
   height: 3.5em;
-  margin-right: .75em;
+  margin-right: 0.75em;
 }
 
 .App-header {
   background-color: #283e4a;
-  padding: .5em 2em;
+  padding: 0.5em 2em;
   color: white;
   display: flex;
   align-items: center;
 }
 
 .App-form {
-  padding:20px;
+  padding: 20px;
 }
 
 .App-form.Input {
-  padding:20px;
+  padding: 20px;
 }
 
 input {
@@ -58,11 +58,12 @@ input {
 }
 
 .App-btn:active {
-  background: #004b7c
+  background: #004b7c;
+  text-decoration: none;
 }
 
 .App-btn:hover {
-  background: #004b7c
+  background: #004b7c;
 }
 
 .App-brand {
@@ -71,19 +72,19 @@ input {
 }
 
 .App-btn-small {
-  margin: .5em;
-  padding: .6em .75em;
+  margin: 0.5em;
+  padding: 0.6em 0.75em;
 }
 
 .App-btn-modal {
-  margin: .5em;
-  padding: .6em .75em;
+  margin: 0.5em;
+  padding: 0.6em 0.75em;
   background: #222;
   color: white;
 }
 
 .App-btn-yellow {
-  margin: .5em;
+  margin: 0.5em;
   background: #004b7c;
 }
 

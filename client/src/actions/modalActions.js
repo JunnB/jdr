@@ -12,3 +12,16 @@ export function toogleModal(show){
         dispatch(modalToogled(show));
     }
 }
+
+function panelToogled(show){
+    return {
+        type: actionTypes.PANEL_TOOGLED,
+        show: show
+    }
+}
+
+export function tooglePanel(show){
+    return dispatch => {
+        dispatch(panelToogled(show));
+    }
+}

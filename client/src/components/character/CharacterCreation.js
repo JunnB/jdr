@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import CharacterStatsCreation from './CharacterStatsCreation';
-import { Link } from 'react-router-dom';
 import { saveCharacter } from '../../services/Services.js';
 import GenericBlock from '../../layouts/GenericBlock';
+import LinkButton from '../shared/LinkButton';
 
 class CharacterCreation extends Component {
   // Affiche un message d'erreur s'il n'y a pas de nom renseigné
@@ -42,9 +42,7 @@ class CharacterCreation extends Component {
       this.props.character.submitted
     ) {
       return (
-        <Link className="App-btn" to={'/game'}>
-          Jouer
-        </Link>
+        <LinkButton className="App-btn" to={'/game'} label="Jouer"/>
       );
     }
   }
@@ -71,8 +69,9 @@ class CharacterCreation extends Component {
       <div className="App">
         <form className="App-form">
           <div className="App-form-group">
-            <GenericBlock children={this}>
+            <GenericBlock children={this} title='Attribuer de nouvelles caractéristiques'>
               {this.displayCarac()}
+              {this.displayPlay()}
             </GenericBlock>
             <div className="allScreenHeight">
               <label htmlFor="name">Nom du personnage :</label>
@@ -82,7 +81,8 @@ class CharacterCreation extends Component {
                 type="text"
                 value={this.props.character.tmpName}
                 onChange={this.inputOnChange}
-                placeholder="John Doe"
+                placeholder="John Snow"
+                autocomplete="off"
               />
               <button
                 className="App-btn"
@@ -94,7 +94,6 @@ class CharacterCreation extends Component {
               </button>
               {this.displayWarning()}
               <div>
-              {this.displayPlay()}
               </div>
             </div>
           </div>

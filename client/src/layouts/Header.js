@@ -15,6 +15,10 @@ class Header extends Component {
   }
 
   render() {
+    var divStyle = {
+      marginTop:'10px'
+    };
+
     return (
       <div className="App">
         <div className="App-header">
@@ -22,7 +26,7 @@ class Header extends Component {
             <Link to={process.env.PUBLIC_URL + '/'}>
               <img src={logo} className="App-logo" alt="logo" />
             </Link>
-            <h2>Jeu dont tu es le Héros</h2>
+            <h2 style={divStyle}>Jeu dont tu es le Héros</h2>
           </div>
           {this.displayRestartButton()}
         </div>

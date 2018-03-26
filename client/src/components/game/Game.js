@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Stats from '../../containers/StatsContainer.js';
+import Inventory from '../../containers/InventoryContainer.js';
 import RestartButton from '../../containers/RestartButtonContainer';
 import GenericBlock from '../../layouts/GenericBlock';
 
@@ -51,11 +52,14 @@ class Game extends Component {
 
   render() {
     return (
-      <div children={this}>
-        <GenericBlock children={this}>
+      <div>
+        <GenericBlock children={this} title='Status du personnage'>
           <Stats />
         </GenericBlock>
-        <GenericBlock children={this} allScreenHeight={true}>
+        <GenericBlock children={this} title='Inventaire du personnage'>
+          <Inventory />
+        </GenericBlock>
+        <GenericBlock children={this} allScreenHeight={true} title='Mon Aventure'>
           <div className="App-game">
             <p>{this.props.game.story.text}</p>
             <div className="App-choices">{this.hasChoice()}</div>

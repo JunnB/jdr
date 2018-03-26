@@ -30,8 +30,7 @@ class Home extends Component {
 
   render() {
     return (
-      <GenericBlock allScreenHeight={'true'}>
-          <h4>Bienvenue dans ta plus grande Aventure</h4>
+      <GenericBlock allScreenHeight={'true'} title='Bienvenue dans ta plus grande Aventure'>
           {this.goToForm()}
           {this.goToGame()}
       </GenericBlock>

@@ -1,4 +1,4 @@
-import '../App.css';
+import '../assets/css/App.css';
 import '../assets/css/Shared.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, { Component } from 'react';

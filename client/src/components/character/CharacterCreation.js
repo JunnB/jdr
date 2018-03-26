@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CharacterStatsCreation from './CharacterStatsCreation';
 import { saveCharacter } from '../../services/Services.js';
-import GenericBlock from '../../layouts/GenericBlock';
+import GenericBlock from '../shared/GenericBlock';
 import LinkButton from '../shared/LinkButton';
 
 class CharacterCreation extends Component {
@@ -69,7 +69,7 @@ class CharacterCreation extends Component {
       <div className="App">
         <form className="App-form">
           <div className="App-form-group">
-            <GenericBlock children={this} title='Attribuer de nouvelles caractéristiques'>
+            <GenericBlock defaultOpen={true} title='Attribuer de nouvelles caractéristiques'>
               {this.displayCarac()}
               {this.displayPlay()}
             </GenericBlock>

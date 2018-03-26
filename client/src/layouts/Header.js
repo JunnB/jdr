@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import RestartButton from '../containers/RestartButtonContainer'
-import logo from '../logo.svg';
-import '../App.css';
+import logo from '../assets/images/logo.svg';
 
 class Header extends Component {
   displayRestartButton() {

@@ -16,7 +16,7 @@ export function toogleModal(show){
 function panelToogled(show){
     return {
         type: actionTypes.PANEL_TOOGLED,
-        show: show
+        panel_show: show
     }
 }
 

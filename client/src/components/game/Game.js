@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Stats from '../../containers/StatsContainer.js';
 import Inventory from '../../containers/InventoryContainer.js';
 import RestartButton from '../../containers/RestartButtonContainer';
-import GenericBlock from '../../layouts/GenericBlock';
+import GenericBlock from '../shared/GenericBlock';
 
 class Game extends Component {
   // Chargement de la position
@@ -50,18 +50,31 @@ class Game extends Component {
     }
   }
 
+  displayStoryMedia(){
+    var media = ''
+    if(this.props.game.story.media && this.props.game.story.media.url){
+      if(this.props.game.story.media.type === 'image' ){
+        media = <img src={this.props.game.story.media.url} className="storyImage img-fluid" alt="Responsive image"/>
+      }
+      if(this.props.game.story.media.type === 'video' ){
+        media = <iframe className="storyVideo" src={this.props.game.story.media.url + '?autoplay=1'} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      }
+    }
+    return(media)
+  }
   render() {
     return (
       <div>
-        <GenericBlock children={this} title='Status du personnage'>
+        <GenericBlock title='Status du personnage'>
           <Stats />
         </GenericBlock>
-        <GenericBlock children={this} title='Inventaire du personnage'>
+        <GenericBlock title='Inventaire du personnage'>
           <Inventory />
         </GenericBlock>
-        <GenericBlock children={this} allScreenHeight={true} title='Mon Aventure'>
+        <GenericBlock defaultOpen={true} allScreenHeight={true} title='Mon Aventure'>
           <div className="App-game">
-            <p>{this.props.game.story.text}</p>
+            {this.displayStoryMedia()}
+            <p style={{fontSize: 20}}>{this.props.game.story.text}</p>
             <div className="App-choices">{this.hasChoice()}</div>
           </div>
         </GenericBlock>

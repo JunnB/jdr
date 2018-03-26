@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LinkButton from '../components/shared/LinkButton';
-import GenericBlock from './GenericBlock'
+import GenericBlock from '../components/shared/GenericBlock'
 class Home extends Component {
   // Propose au joueur de créer un personnage
   goToForm() {
@@ -30,7 +30,7 @@ class Home extends Component {
 
   render() {
     return (
-      <GenericBlock allScreenHeight={'true'} title='Bienvenue dans ta plus grande Aventure'>
+      <GenericBlock defaultOpen={true} allScreenHeight={true} title='Bienvenue dans ta plus grande Aventure'>
           {this.goToForm()}
           {this.goToGame()}
       </GenericBlock>

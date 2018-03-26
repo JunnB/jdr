@@ -4,7 +4,11 @@ var initialState = {
   story: {
     title: 'start',
     text: '',
-    next: []
+    next: [],
+    media: {
+      type: '',
+      url: ''
+    }
   }
 };
 

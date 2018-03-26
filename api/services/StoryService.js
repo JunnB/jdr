@@ -1,7 +1,7 @@
 const Story = require('../models/Story')
 module.exports = {
     find: function(params, callback){
-        Story.find(params,'_id title text next', function(err, results){
+        Story.find(params,'_id title text media next', function(err, results){
             if(err){
                 callback(err, null);
                 return;

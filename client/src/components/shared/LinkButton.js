@@ -1,23 +1,28 @@
-import React from 'react'
-import { withRouter } from 'react-router'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 
-const LinkButton = (props) => {
-  const {
-    history,
-    to,
-    onClick,
-    className,
-    label
-  } = props
-  return (
-    <button
-      className={className}
-      onClick={(event) => {
-        onClick && onClick(event)
-        history.push(to)
-      }}
-    >{label}</button>
-  )
+class LinkButton extends Component {
+  getStyle() {
+    var style = {};
+    if (this.props.style) {
+      style = this.props.style;
+    }
+    return style;
+  }
+  render() {
+    return (
+      <button
+        className={this.props.className}
+        style={this.getStyle()}
+        onClick={event => {
+          this.props.onClick && this.props.onClick(event);
+          this.props.history.push(this.props.to);
+        }}
+      >
+        {this.props.label}
+      </button>
+    );
+  }
 }
 
 export default withRouter(LinkButton);

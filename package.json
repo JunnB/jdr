@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "9.8.0",
+    "npm": "5.6.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
@@ -20,6 +24,7 @@
   },
   "scripts": {
     "start": "nodemon server",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild":
+      "cd client && npm install --only=dev && npm install && npm run build"
   }
 }

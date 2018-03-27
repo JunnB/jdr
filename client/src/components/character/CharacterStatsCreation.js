@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { generateCharacter } from '../../services/Services.js';
+import LinkButton from '../shared/LinkButton';
 
 class CharacterStatsCreation extends Component {
   onClick = event => {
@@ -7,6 +8,18 @@ class CharacterStatsCreation extends Component {
     var character = generateCharacter(this.props.character);
     this.props.createCharacter(character);
   };
+
+  // Renvoie un lien vers le jeu une fois le personnage créé
+  displayPlay() {
+    if (
+      this.props.character.characterCreated &&
+      this.props.character.submitted
+    ) {
+      return (
+        <LinkButton style={{marginLeft: 10}} className="App-btn" to={'/game'} label="Jouer"/>
+      );
+    }
+  }
 
   render() {
     return (
@@ -26,6 +39,7 @@ class CharacterStatsCreation extends Component {
         <button className="App-btn" onClick={event => this.onClick(event)}>
           Générer
         </button>
+        {this.displayPlay()}
       </div>
     );
   }

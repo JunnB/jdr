@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CharacterStatsCreation from './CharacterStatsCreation';
 import { saveCharacter } from '../../services/Services.js';
 import GenericBlock from '../shared/GenericBlock';
-import LinkButton from '../shared/LinkButton';
 
 class CharacterCreation extends Component {
   // Affiche un message d'erreur s'il n'y a pas de nom renseigné
@@ -35,18 +34,6 @@ class CharacterCreation extends Component {
     }
   }
 
-  // Renvoie un lien vers le jeu une fois le personnage créé
-  displayPlay() {
-    if (
-      this.props.character.characterCreated &&
-      this.props.character.submitted
-    ) {
-      return (
-        <LinkButton className="App-btn" to={'/game'} label="Jouer"/>
-      );
-    }
-  }
-
   inputOnChange = event => {
     this.props.saveTmpName({ tmpName: event.target.value });
   };
@@ -71,7 +58,6 @@ class CharacterCreation extends Component {
           <div className="App-form-group">
             <GenericBlock defaultOpen={true} title='Attribuer de nouvelles caractéristiques'>
               {this.displayCarac()}
-              {this.displayPlay()}
             </GenericBlock>
             <div className="allScreenHeight">
               <label htmlFor="name">Nom du personnage :</label>

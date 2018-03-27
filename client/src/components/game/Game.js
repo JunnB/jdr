@@ -3,6 +3,7 @@ import Stats from '../../containers/StatsContainer.js';
 import Inventory from '../../containers/InventoryContainer.js';
 import RestartButton from '../../containers/RestartButtonContainer';
 import GenericBlock from '../shared/GenericBlock';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class Game extends Component {
   // Chargement de la position
@@ -50,32 +51,66 @@ class Game extends Component {
     }
   }
 
-  displayStoryMedia(){
-    var media = ''
-    if(this.props.game.story.media && this.props.game.story.media.url){
-      if(this.props.game.story.media.type === 'image' ){
-        media = <img src={this.props.game.story.media.url} className="storyImage img-fluid" alt="Responsive image"/>
+  displayStoryMedia() {
+    var media = '';
+    if (this.props.game.story.media && this.props.game.story.media.url) {
+      if (this.props.game.story.media.type === 'image') {
+        media = (
+          <img
+            src={this.props.game.story.media.url}
+            className="storyImage img-fluid"
+            alt=""
+          />
+        );
       }
-      if(this.props.game.story.media.type === 'video' ){
-        media = <iframe className="storyVideo" src={this.props.game.story.media.url + '?autoplay=1'} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      if (this.props.game.story.media.type === 'video') {
+        media = (
+          <iframe
+            title={this.props.game.story.title}
+            className="storyVideo"
+            src={this.props.game.story.media.url + '?autoplay=1'}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
+        );
       }
     }
-    return(media)
+    return media;
   }
   render() {
     return (
       <div>
-        <GenericBlock title='Status du personnage'>
-          <Stats />
-        </GenericBlock>
-        <GenericBlock title='Inventaire du personnage'>
-          <Inventory />
-        </GenericBlock>
-        <GenericBlock defaultOpen={true} allScreenHeight={true} title='Mon Aventure'>
+        <Grid fluid>
+          <Row>
+            <Col sm={6} className="">
+              <GenericBlock xs={10} xsOffset={2} noGrid title="Status du personnage">
+                <Stats />
+              </GenericBlock>
+            </Col>
+            <Col sm={6} className="">
+              <GenericBlock xs={10} xsOffset={0} noGrid title="Inventaire du personnage">
+                <Inventory />
+              </GenericBlock>
+            </Col>
+          </Row>
+        </Grid>
+        <GenericBlock
+          fluid
+          xs={10}
+          xsOffset={1}
+          defaultOpen
+          className="allScreenHeight"
+          title="Mon Aventure"
+        >
           <div className="App-game">
-            {this.displayStoryMedia()}
-            <p style={{fontSize: 20}}>{this.props.game.story.text}</p>
-            <div className="App-choices">{this.hasChoice()}</div>
+            <Col sm={5} className="vcenter">
+              {this.displayStoryMedia()}
+            </Col>
+            <Col sm={7} className="vcenter">
+              <p style={{ fontSize: 20 }}>{this.props.game.story.text}</p>
+              <div className="App-choices">{this.hasChoice()}</div>
+            </Col>
           </div>
         </GenericBlock>
       </div>

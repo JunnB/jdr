@@ -3,7 +3,6 @@ import { Panel } from 'react-bootstrap';
 
 class GenericPanel extends Component {
   componentDidMount(props, context) {
-    console.log(this.props.defaultOpen);
     if (this.props.defaultOpen) {
       this.props.openPanel(this.props.defaultOpen);
     }

@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/ActionTypes';
 var initialState = {
   story: {
     title: 'start',
+    resume: "Début de l'Aventure",
     text: '',
     next: [],
     media: {

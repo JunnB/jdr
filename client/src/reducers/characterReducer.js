@@ -7,31 +7,7 @@ var initialState = {
     tmpName: '', //Nom temporaire
     strenght: 0, //Force du personnage
     health: 0, //Santé du personnage,
-    luck: 0, //Santé du personnage
-    inventory: {
-      weapons: [
-        {
-        name: 'Epée',
-        dmg: 3,
-        durability: 5
-      }
-      ],
-      spells: [
-        {
-          name: 'Boule de feu',
-          dmg: 5,
-          durability: 3
-        }
-      ],
-      items: [
-        {
-          name: 'Potion de soin',
-          type: 'heal',
-          heal: 5,
-          quantity: 3
-        }
-      ],
-    }
+    luck: 0 //Santé du personnage
 };
 
 export default (state = initialState, action) => {

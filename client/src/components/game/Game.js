@@ -78,23 +78,40 @@ class Game extends Component {
     }
     return media;
   }
+
+  renderCharAttrs() {
+    return (
+      <Grid fluid>
+        <Row>
+          <Col sm={6}>
+            <GenericBlock
+              xs={10}
+              xsOffset={2}
+              noGrid
+              title="Status du personnage"
+            >
+              <Stats />
+            </GenericBlock>
+          </Col>
+          <Col sm={6}>
+            <GenericBlock
+              xs={10}
+              xsOffset={0}
+              noGrid
+              title="Inventaire du personnage"
+            >
+              <Inventory />
+            </GenericBlock>
+          </Col>
+        </Row>
+      </Grid>
+    );
+  }
+
   render() {
     return (
       <div>
-        <Grid fluid>
-          <Row>
-            <Col sm={6} className="">
-              <GenericBlock xs={10} xsOffset={2} noGrid title="Status du personnage">
-                <Stats />
-              </GenericBlock>
-            </Col>
-            <Col sm={6} className="">
-              <GenericBlock xs={10} xsOffset={0} noGrid title="Inventaire du personnage">
-                <Inventory />
-              </GenericBlock>
-            </Col>
-          </Row>
-        </Grid>
+        {this.renderCharAttrs()}
         <GenericBlock
           fluid
           xs={10}
@@ -108,6 +125,7 @@ class Game extends Component {
               {this.displayStoryMedia()}
             </Col>
             <Col sm={7} className="vcenter">
+              <h3>{this.props.game.story.resume}</h3>
               <p style={{ fontSize: 20 }}>{this.props.game.story.text}</p>
               <div className="App-choices">{this.hasChoice()}</div>
             </Col>
